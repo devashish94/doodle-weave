@@ -1,2 +1,2 @@
-# doodle-weave
+# Doodle Weave
 Interactive collaborative whiteboard application
