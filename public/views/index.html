@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doodle Weave</title>
+  <link rel="stylesheet" href="/assets/styles/output.css">
+  <script src="https://unpkg.com/roughjs@latest/bundled/rough.js"></script>
+  <script defer src="/assets/scripts/script.js"></script>
+</head>
+
+<body class="">
+
+  <!-- file menu -->
+  <div
+    class="bg-black text-violet-200 drop-shadow-md absolute top-5 left-5 w-fit px-2 rounded-xl h-12 flex space-x-0 items-center">
+    <button class="hover:bg-violet-200 hover:text-black rounded-lg px-4 py-1">File</button>
+    <button class="hover:bg-violet-200 hover:text-black rounded-lg px-4 py-1">Edit</button>
+    <button class="hover:bg-violet-200 hover:text-black rounded-lg px-4 py-1">View</button>
+    <button class="hover:bg-violet-200 hover:text-black rounded-lg px-4 py-1">Help</button>
+  </div>
+
+  <!-- element type left pane -->
+  <div
+    class="bg-black text-violet-200 drop-shadow-md absolute top-1/2 left-5 h-min -translate-y-1/2 space-y-6 p-2 rounded-xl flex flex-col justify-center">
+    <button id="pencil" class="flex justify-center items-center p-2 hover:bg-violet-200 hover:text-black rounded-xl">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-7 h-7">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
+      </svg>
+    </button>
+    <button id="eraser" class="flex justify-center items-center p-2 hover:bg-violet-200 hover:text-black rounded-xl">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="h-7 w-7" viewBox="0 0 16 16">
+        <path
+          d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm2.121.707a1 1 0 0 0-1.414 0L4.16 7.547l5.293 5.293 4.633-4.633a1 1 0 0 0 0-1.414l-3.879-3.879zM8.746 13.547 3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z" />
+      </svg>
+    </button>
+    <button id="line" class="flex justify-center items-center p-2 hover:bg-violet-200 hover:text-black rounded-xl">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="h-7 w-7" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z" />
+      </svg>
+    </button>
+    <button id="rectangle" class="flex justify-center items-center p-2 hover:bg-violet-200 hover:text-black rounded-xl">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="h-7 w-7" viewBox="0 0 16 16">
+        <path
+          d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+      </svg>
+    </button>
+    <button id="diamond"
+      class="rotate-45 flex justify-center items-center p-2 hover:bg-violet-200 hover:text-black rounded-xl">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="h-6 w-6" viewBox="0 0 16 16">
+        <path
+          d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+      </svg>
+    </button>
+    <button id="circle" class="flex justify-center items-center p-2 hover:bg-violet-200 hover:text-black rounded-xl">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="h-7 w-7" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- collaborate logo text -->
+  <button
+    class="bg-black text-violet-200 hover:bg-violet-200  hover:text-black group absolute right-5 top-5 duration-300 transition-all ease-in-out  rounded-xl p-1 sm:px-3 sm:py-2 flex space-x-2 items-center bigger transform-gpu drop-shadow">
+    <div class="flex justify-center items-center p-2 rounded-lg">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="h-6 w-6" viewBox="0 0 16 16">
+        <path
+          d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
+      </svg>
+    </div>
+    <p class="hidden sm:flex">Collaborate</p>
+  </button>
+
+  <!-- lock state -->
+  <div id="lock-state-container"
+    class="absolute bottom-5 right-5 rounded-xl drop-shadow-lg transition-all transform-gpu duration-300 ease-in-out bg-black text-violet-200 hover:text-black hover:bg-violet-200">
+    <button id="unlock" class="flex space-x-4 justify-center items-center p-3 sm:px-5 sm:py-3">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-7 h-7">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+      </svg>
+      <p class="hidden sm:flex">Unlock</p>
+    </button>
+    <button id="lock" class="hidden space-x-4 justify-center items-center p-3 sm:px-5 sm:py-3 ">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-7 h-7">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+      </svg>
+      <p class="hidden sm:flex">Lock</p>
+    </button>
+  </div>
+
+  <div class="bg-neutral-200">
+    <canvas id="canvas"></canvas>
+  </div>
+</body>
+
+</html>
